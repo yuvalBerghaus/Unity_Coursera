@@ -1,0 +1,5 @@
+Temp# Ignore Unity generated folders
+Library/
+Temp/
+UserSettings/
+Logs/
