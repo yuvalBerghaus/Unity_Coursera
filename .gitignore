@@ -3,3 +3,9 @@ Library/
 Temp/
 UserSettings/
 Logs/
+obj/Debug
+Packages/
+Builds/
+.vsconfig
+Assembly-CSharp.csproj
+Project1.sln
