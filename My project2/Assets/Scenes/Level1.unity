@@ -266,11 +266,11 @@ MonoBehaviour:
   currentHealth: 1
   invincibilityTime: 3
   isAlwaysInvincible: 0
-  useLives: 0
+  useLives: 1
   currentLives: 3
   maximumLives: 5
-  deathEffect: {fileID: 0}
-  hitEffect: {fileID: 0}
+  deathEffect: {fileID: 6218169049356006189, guid: 68794701c80057447857bb433e54c579, type: 3}
+  hitEffect: {fileID: 5156419567158778961, guid: d35295653acdbe24081a5caee3d9c353, type: 3}
 --- !u!1001 &1391995038
 PrefabInstance:
   m_ObjectHideFlags: 0
