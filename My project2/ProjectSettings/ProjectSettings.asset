@@ -811,11 +811,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 2
-  cloudProjectId: 
+  cloudProjectId: 26764f13-2791-479f-828b-bf7c2b501ffa
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: My project2
+  organizationId: ymbproduction
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
