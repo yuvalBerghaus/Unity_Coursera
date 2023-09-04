@@ -263,4 +263,13 @@ public class Controller : MonoBehaviour
             }
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Player collided with the block!");
+        if (collision.gameObject.CompareTag("Block"))
+        {
+            // Handle collision with the block here
+            Debug.Log("Player collided with the block!");
+        }
+    }
 }
