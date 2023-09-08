@@ -120,7 +120,7 @@ TextureImporter:
       213: 5117398880213584086
     second: PlatformLarge_Right
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -141,6 +141,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -150,8 +151,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -172,11 +173,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -204,6 +208,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1046,6 +1086,46 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      PlatformLarge_Green_2: -5098616527534495373
+      PlatformMedium_Right_Red_3: -189285548493382134
+      PlatformMedium_Right_Yellow_2: -1460643933276943363
+      PlatformLarge_Yellow_3: 9149426377420566778
+      PlatformMedium_Right_Green_1: 54522180897507154
+      PlatformSmall_Red_1: -6635905541183440361
+      PlatformMedium_Left_Green_3: -1295611036763423232
+      PlatformSmall_Yellow_3: -6369360062541761375
+      PlatformLarge_Green_1: -5873329525536930085
+      PlatformSmall_Green_1: -7925157222857896072
+      PlatformLarge_Yellow_1: 6517203183107812058
+      PlatformLarge_Red_2: -5708479479478706834
+      PlatformMedium_Right_Green_2: 5399061400661604672
+      PlatformMedium_Right_Yellow_3: -1234702284303671506
+      PlatformMedium_Left_Yellow_2: -274442635206943934
+      PlatformSmall_Red_2: 5420418460906776080
+      PlatformLarge_Right: 5117398880213584086
+      PlatformLarge_Center: 4820010582552614797
+      PlatformSmall_Green_3: 2940215413724971715
+      PlatformLarge_Yellow_2: 3791557598014238592
+      PlatformMedium_Right_Red_2: -7878943209181770541
+      PlatformMedium_Left_Yellow_3: 1737881735260570576
+      PlatformMedium_Left_Green_2: -301653405578374708
+      PlatformMedium_Left_Green_1: -871907234539676369
+      PlatformSmall_Yellow_1: 7193844817558614349
+      PlatformMedium_Right_Red_1: -1598417253368685799
+      PlatformMedium_Right_Yellow_1: -6518242031988935372
+      PlatformSmall_Green_2: 1683800829450327948
+      PlatformMedium_Left_Red_3: 8295246170305410839
+      PlatformSmall_Red_3: -4494513946834350030
+      PlatformMedium_Left_Red_2: 7790489806565057393
+      PlatformLarge_Red_1: 6805516705968167495
+      PlatformLarge_Left: 6550547548795216849
+      PlatformMedium_Left_Red_1: -178359932455013240
+      PlatformMedium_Left_Yellow_1: -4227913453271759177
+      PlatformLarge_Green_3: 8322728567554151366
+      PlatformLarge_Red_3: -6144471908281445623
+      PlatformSmall_Yellow_2: 186778259860431313
+      PlatformMedium_Right_Green_3: -8465405623161569554
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

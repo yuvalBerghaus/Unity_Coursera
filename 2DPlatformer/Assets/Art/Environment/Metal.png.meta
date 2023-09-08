@@ -99,7 +99,7 @@ TextureImporter:
       213: -7971299764418391309
     second: DarkMetal_Single
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -120,6 +120,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -129,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -151,11 +152,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -183,6 +187,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -878,6 +918,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      DarkMetal_Center_Left: 1533032381965511437
+      Metal_Column_Center: -8961950925676901529
+      Metal_Row_Left: 4390418108133961450
+      Metal_Row_Center: -5979677299219791526
+      Metal_Single: 5673141639267775971
+      DarkMetal_Column_Top: 4280140775337727081
+      DarkMetal_Row_Right: 8336394408375787007
+      Metal_Center_Right: -4660086729066665798
+      Metal_Top_Right: -4291250929300952025
+      Metal_Top_Left: -8638448890813730969
+      Metal_Row_Right: 6962031434913937272
+      DarkMetal_Bottom_Left: -7637165044954881804
+      DarkMetal_Top_Right: 9051345908527930705
+      DarkMetal_Top_Center: 7075844648559293400
+      Metal_Bottom_Right: -6609230443217566254
+      DarkMetal_Row_Left: -4986189832431879090
+      Metal_Bottom_Center: -2037017275707848092
+      DarkMetal_Bottom_Right: -352228370359270939
+      DarkMetal_Top_Left: 6508816939499611902
+      Metal_Center_Left: 7686280345405294104
+      Metal_Center: 1396373533295336388
+      DarkMetal_Column_Bottom: 6341922446725816878
+      Metal_Column_Top: 919693202005755323
+      Metal_Top_Center: 2295852015588209501
+      DarkMetal_Single: -7971299764418391309
+      DarkMetal_Center: 858581352650525874
+      DarkMetal_Row_Center: -9071672131066053803
+      Metal_Column_Bottom: -3367057741777355009
+      DarkMetal_Bottom_Center: -1706539880538938679
+      DarkMetal_Center_Right: 1982096469999804075
+      Metal_Bottom_Left: -76456095654998164
+      DarkMetal_Column_Center: -4009991031583649951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

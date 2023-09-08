@@ -81,7 +81,7 @@ TextureImporter:
       213: 290929670766573784
     second: Bones_Fossil
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -102,6 +102,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -111,8 +112,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -133,11 +134,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -165,6 +169,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -734,6 +774,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Corrupted2_1: -8229091110289179707
+      Space_Logo: 7493481436008557443
+      Corrupted4_1: 1675403077877357833
+      Corrupted4_4: -6143347036964438665
+      Corrupted4_2: -4315097013913569973
+      Vent_Quad: -1615287379450267837
+      Orb_4: 5399509595125971511
+      Vent_Large: 4845226712272033188
+      Corrupted3_1: 7610768158921809978
+      Bones_Ribs: -4109025796847826357
+      Corrupted2_4: 2159158867610246814
+      Corrupted3_4: 1275258200880177970
+      Corrupted2_3: -4476251193684948283
+      Corrupted1_2: -2665013462473649628
+      Corrupted1_4: 6522251007206638573
+      Bones_Fossil: 290929670766573784
+      Corrupted1_3: 4466780716907612453
+      Bones_Skull: 7570838782930874673
+      Orb_3: 6371828779833682568
+      Orb_1: 5500871050033689153
+      Corrupted1_1: -6076065925754670426
+      Corrupted2_2: -5720669192706917941
+      Corrupted3_2: -2203102603614712754
+      Corrupted3_3: 551241326485743009
+      Corrupted4_3: 123329021340605358
+      Orb_2: 3477309023556903391
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

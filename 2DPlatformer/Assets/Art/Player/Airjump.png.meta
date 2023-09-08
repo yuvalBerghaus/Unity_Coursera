@@ -21,7 +21,7 @@ TextureImporter:
       213: 4612170427975710411
     second: Airjump_6
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -42,6 +42,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -51,8 +52,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -73,11 +74,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -115,6 +119,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -134,7 +174,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f42233c056cd9edb0800000000000000
-      internalID: -4762032804413103537
+      internalID: -6198390183369009708
       vertices: []
       indices: 
       edges: []
@@ -155,7 +195,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4d5950df7f4eaf9a0800000000000000
-      internalID: -6198390183369009708
+      internalID: 6455176232263000822
       vertices: []
       indices: 
       edges: []
@@ -176,7 +216,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6f2a49e0594659950800000000000000
-      internalID: 6455176232263000822
+      internalID: -5959423955827398309
       vertices: []
       indices: 
       edges: []
@@ -197,7 +237,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b5964fe8c7fdb4da0800000000000000
-      internalID: -5959423955827398309
+      internalID: 4675976145370908800
       vertices: []
       indices: 
       edges: []
@@ -218,7 +258,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0888803a78764e040800000000000000
-      internalID: 4675976145370908800
+      internalID: 4612170427975710411
       vertices: []
       indices: 
       edges: []
@@ -239,7 +279,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bc6bd036198b10040800000000000000
-      internalID: 4612170427975710411
+      internalID: -4762032804413103537
       vertices: []
       indices: 
       edges: []
@@ -254,6 +294,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Airjump_5: 4612170427975710411
+      Airjump_1: -6198390183369009708
+      Airjump_4: 4675976145370908800
+      Airjump_3: -5959423955827398309
+      Airjump_2: 6455176232263000822
+      Airjump_6: -4762032804413103537
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

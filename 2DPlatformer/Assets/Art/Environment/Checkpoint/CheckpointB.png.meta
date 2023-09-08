@@ -78,7 +78,7 @@ TextureImporter:
       213: -4560179388572496127
     second: CheckpointB_IdleOn8
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -99,6 +99,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -108,8 +109,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -130,11 +131,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -162,6 +166,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -710,6 +750,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      CheckpointB_IdleOn4: -5153918538021051352
+      CheckpointB_TurningOn12: 3155133492183849802
+      CheckpointB_TurningOn14: -5436023988292100899
+      CheckpointB_TurningOn6: -561919746815521506
+      CheckpointB_TurningOn11: 9059984302258533940
+      CheckpointB_TurningOn7: -5307573125047766486
+      CheckpointB_TurningOn2: -30778722961798664
+      CheckpointB_IdleOn5: 2755897117477421158
+      CheckpointB_Off: -6042486183098847668
+      CheckpointB_IdleOn7: 2468428402805805509
+      CheckpointB_TurningOn1: 475405890618298078
+      CheckpointB_TurningOn13: 6479288144214064685
+      CheckpointB_TurningOn10: -3669037678274863661
+      CheckpointB_TurningOn3: 8614746745799956565
+      CheckpointB_TurningOn5: -5457977923663046540
+      CheckpointB_TurningOn16: -5780305140611369866
+      CheckpointB_TurningOn4: -4646696317878712140
+      CheckpointB_IdleOn8: -4560179388572496127
+      CheckpointB_TurningOn8: 5566824455994337309
+      CheckpointB_IdleOn1: -572544553811036313
+      CheckpointB_TurningOn9: -9153900229712377279
+      CheckpointB_TurningOn15: -5313769325294674699
+      CheckpointB_IdleOn2: -4722898807436693933
+      CheckpointB_IdleOn6: -4500620556544795975
+      CheckpointB_IdleOn3: -6713047109510036290
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

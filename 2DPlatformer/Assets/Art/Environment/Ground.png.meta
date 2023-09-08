@@ -99,7 +99,7 @@ TextureImporter:
       213: 4322028927912867057
     second: BackGround_Single
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -120,6 +120,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -129,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -151,11 +152,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -183,6 +187,42 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -878,6 +918,39 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ground_Center_Right: 5331757720867617967
+      BackGround_Center_Right: 3912554482014063563
+      BackGround_Top_Left: -4233739483619845583
+      BackGround_Row_Center: 5357474440129519165
+      BackGround_Column_Top: -232304020389510235
+      Ground_Center: 4362130248060910229
+      BackGround_Center: 7903714108508714464
+      BackGround_Row_Right: -5315828571106901945
+      Ground_Row_Right: 955270936876841680
+      BackGround_Center_Left: 1940044384358670937
+      Ground_Column_Center: 5743168839956448968
+      Ground_Top_Left: 6682738439518977790
+      Ground_Top_Right: -4970410492042351176
+      Ground_Single: -8441922457720628055
+      Ground_Column_Top: -5930158604282628446
+      BackGround_Row_Left: 4474571884964807243
+      BackGround_Column_Bottom: 6012075677060953230
+      Ground_Center_Left: -2542073858232844238
+      BackGround_Top_Center: -6551456632857933372
+      Ground_Column_Bottom: -1986604703071005312
+      Ground_Top_Center: -562605217060080129
+      BackGround_Bottom_Left: 2971426260718290345
+      Ground_Row_Center: -8780798934548743478
+      Ground_Bottom_Center: -942494204440328609
+      BackGround_Top_Right: 4717279005209572468
+      BackGround_Column_Center: -5970157769536964832
+      BackGround_Bottom_Center: 4556602332822886861
+      Ground_Row_Left: -2801654775933646049
+      Ground_Bottom_Right: 1603184614873367213
+      BackGround_Bottom_Right: -8962348942449561705
+      Ground_Bottom_Left: 289909530908896649
+      BackGround_Single: 4322028927912867057
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

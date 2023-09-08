@@ -39,7 +39,7 @@ TextureImporter:
       213: 247523653679875549
     second: Score_Collectable_Idle6
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,6 +60,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -69,8 +70,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -91,11 +92,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -133,6 +137,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -152,7 +192,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3cb73ceeadf1f18c0800000000000000
-      internalID: -4026464516676813885
+      internalID: 7954556612373881922
       vertices: []
       indices: 
       edges: []
@@ -173,7 +213,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cf226eedb8e418b80800000000000000
-      internalID: -8394341867794849028
+      internalID: -2848249159903744698
       vertices: []
       indices: 
       edges: []
@@ -194,7 +234,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5a849a81cc49af630800000000000000
-      internalID: 3961642426533759141
+      internalID: -3731226829080348964
       vertices: []
       indices: 
       edges: []
@@ -215,7 +255,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dfa631c1327044910800000000000000
-      internalID: 1820587996740807421
+      internalID: -953365265809376140
       vertices: []
       indices: 
       edges: []
@@ -236,7 +276,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fa3e994911fe957e0800000000000000
-      internalID: -1776125719234354257
+      internalID: 2198794343142446588
       vertices: []
       indices: 
       edges: []
@@ -257,7 +297,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dd5881b93716f6300800000000000000
-      internalID: 247523653679875549
+      internalID: -4967890818724032237
       vertices: []
       indices: 
       edges: []
@@ -272,6 +312,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Score_Collectable_Idle4: -953365265809376140
+      Score_Collectable_Idle3: -3731226829080348964
+      Score_Collectable_Idle1: 7954556612373881922
+      Score_Collectable_Idle2: -2848249159903744698
+      Score_Collectable_Idle5: 2198794343142446588
+      Score_Collectable_Idle6: -4967890818724032237
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
