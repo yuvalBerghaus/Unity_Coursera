@@ -6,6 +6,7 @@ Logs/
 obj/Debug
 Packages/
 Builds/
+3DFPSAssets/
 .vsconfig
 Assembly-CSharp.csproj
 Project1.sln
