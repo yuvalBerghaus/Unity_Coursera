@@ -16,8 +16,14 @@ public class PlayerController : MonoBehaviour
     public float jumpPower = 8f;
     [Tooltip("The gravity of the world")]
     public float gravity = 9.81f;
+
+    [Header("Jump Timing")]
+    public float jumpTimeLeniency = 0.1f;
+    float timeToStopBeingLenient = 0;
     [Header("Required References")]
     public Shooter playerShooter;
+    bool doubleJumpAvailable = false;
+
     [Tooltip("The player shooter script that fires projectiles")]
     // The character controller component on the player
     private CharacterController controller;
@@ -34,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         SetUpCharacterController();
         SetUpInputManager();
+        ProcessRotation();
     }
 
 
@@ -62,6 +69,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ProcessMovement();
+        ProcessRotation();
     }
     Vector3 moveDirection;
     void ProcessMovement()
@@ -73,6 +81,8 @@ public class PlayerController : MonoBehaviour
         // Handle the control of the player while it is on the ground
         if (controller.isGrounded)
         {
+            doubleJumpAvailable = true;
+            timeToStopBeingLenient = Time.time + jumpTimeLeniency;
             // Set the movement direction to be the recieved input, set y to 0 since we are on the ground
             moveDirection = new Vector3(leftRightInput, 0, forwardBackwardInput);
             // Set the move direction in relation to the transform
@@ -87,9 +97,30 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection = new Vector3(leftRightInput * moveSpeed, moveDirection.y, forwardBackwardInput * moveSpeed);
             moveDirection = transform.TransformDirection(moveDirection);
+            if (jumpPressed && Time.time < timeToStopBeingLenient)
+            {
+                moveDirection.y = jumpPower;
+            }
+            else if(jumpPressed && doubleJumpAvailable)
+            {
+                moveDirection.y = jumpPower;
+                doubleJumpAvailable = false;
+            }
         }
         moveDirection.y -= gravity * Time.deltaTime;
 
+        if (controller.isGrounded && moveDirection.y < 0)
+        {
+            moveDirection.y = -0.3f;
+        }
+
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    void ProcessRotation()
+    {
+        float horizontalLookInput = inputManager.horizontalLookAxis;
+        Vector3 playerRotation = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(new Vector3(playerRotation.x, playerRotation.y + horizontalLookInput * lookspeed * Time.deltaTime, playerRotation.z));
     }
 }

@@ -549,6 +549,7 @@ MonoBehaviour:
   lookspeed: 60
   jumpPower: 8
   gravity: 9.81
+  jumpTimeLeniency: 0.1
   playerShooter: {fileID: 0}
 --- !u!23 &699965326
 MeshRenderer:
@@ -2053,7 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controledCamera: {fileID: 1809985319}
-  rotationSpeed: 60
+  rotationSpeed: 40
   invert: 1
 --- !u!1001 &1888672384
 PrefabInstance:
