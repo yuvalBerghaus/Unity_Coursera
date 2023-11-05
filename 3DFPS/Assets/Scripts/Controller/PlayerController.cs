@@ -69,19 +69,24 @@ public class PlayerController : MonoBehaviour
         // Get the input from the input manager
         float leftRightInput = inputManager.horizontalMoveAxis;
         float forwardBackwardInput = inputManager.verticalMoveAxis;
-        bool jumpPressed = inputManager.jumpPressed; 
+        bool jumpPressed = inputManager.jumpPressed;
         // Handle the control of the player while it is on the ground
-        if(controller.isGrounded)
+        if (controller.isGrounded)
         {
             // Set the movement direction to be the recieved input, set y to 0 since we are on the ground
             moveDirection = new Vector3(leftRightInput, 0, forwardBackwardInput);
             // Set the move direction in relation to the transform
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * moveSpeed;
-            if(jumpPressed)
+            if (jumpPressed)
             {
                 moveDirection.y = jumpPower;
             }
+        }
+        else
+        {
+            moveDirection = new Vector3(leftRightInput * moveSpeed, moveDirection.y, forwardBackwardInput * moveSpeed);
+            moveDirection = transform.TransformDirection(moveDirection);
         }
         moveDirection.y -= gravity * Time.deltaTime;
 
