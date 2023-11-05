@@ -22,10 +22,13 @@ public class PlayerController : MonoBehaviour
     float timeToStopBeingLenient = 0;
     [Header("Required References")]
     public Shooter playerShooter;
+    public Health playerHealth;
+    public List<GameObject> disableWhileDead;
     bool doubleJumpAvailable = false;
 
     [Tooltip("The player shooter script that fires projectiles")]
     // The character controller component on the player
+    
     private CharacterController controller;
     private InputManager inputManager;
     /// <summary>
@@ -68,6 +71,21 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        if(playerHealth.currentHealth <= 0)
+        {
+            foreach(GameObject inGameObject in disableWhileDead)
+            {
+                inGameObject.SetActive(false);
+            }
+            return;
+        }
+        else
+        {
+            foreach (GameObject inGameObject in disableWhileDead)
+            {
+                inGameObject.SetActive(true);
+            }
+        }
         ProcessMovement();
         ProcessRotation();
     }
