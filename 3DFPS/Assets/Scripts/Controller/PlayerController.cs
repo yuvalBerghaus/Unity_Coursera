@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection = new Vector3(leftRightInput * moveSpeed, moveDirection.y, forwardBackwardInput * moveSpeed);
             moveDirection = transform.TransformDirection(moveDirection);
+            
             if (jumpPressed && Time.time < timeToStopBeingLenient)
             {
                 moveDirection.y = jumpPower;
