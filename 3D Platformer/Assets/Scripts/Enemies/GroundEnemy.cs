@@ -8,6 +8,7 @@ using UnityEngine.AI;
 /// </summary>
 public class GroundEnemy : Enemy
 {
+/*    public GameObject goalPickupPrefab;*/
     [Header("Ground Enemy Settings")]
     [Tooltip("The nav mesh agent used to move this enemy")]
     public NavMeshAgent agent = null;

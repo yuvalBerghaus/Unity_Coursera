@@ -10,6 +10,7 @@ using UnityEngine;
 /// </summary>
 public class Health : MonoBehaviour
 {
+
     [Header("Team Settings")]
     [Tooltip("The team associated with this damage")]
     public int teamId = 0;
@@ -272,6 +273,10 @@ public class Health : MonoBehaviour
         else
         {
             GameOver();
+/*            if(this.gameObject.CompareTag("Enemy"))
+            {
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            }*/
             Destroy(this.gameObject);
         }      
     }
