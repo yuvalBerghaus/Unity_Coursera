@@ -28,6 +28,7 @@ Link to the game - https://ymbproduction.itch.io/2d-platformer-week-1
 Link to the game - https://ymbproduction.itch.io/3d-first-person-shooter
 <br>
 <br>
+
 ![Screenshot 2023-11-07 232200](https://github.com/yuvalBerghaus/Unity_Coursera/assets/65304080/461d0966-0fd3-4e5d-be1a-add31f615d4b)
 
 ## Fifth game - 3D Platformer
@@ -35,6 +36,7 @@ Link to the game - https://ymbproduction.itch.io/3d-first-person-shooter
 Link to the game - https://ymbproduction.itch.io/3d-platformer
 <br>
 <br>
+
 ![Screenshot 2023-11-15 182155](https://github.com/yuvalBerghaus/Unity_Coursera/assets/65304080/62342c8f-eb68-47c9-b518-c63b288970a8)
 
 # Sixth game - BattleShip Capstone 2D
@@ -42,5 +44,6 @@ Link to the game - https://ymbproduction.itch.io/3d-platformer
 Link to the game - https://ymbproduction.itch.io/battleship2d
 <br>
 <br>
+
 ![MainMenu](https://github.com/yuvalBerghaus/Unity_Coursera/assets/65304080/04910ae9-08fd-4abb-aeb9-e7ae1b45fee1)
 
