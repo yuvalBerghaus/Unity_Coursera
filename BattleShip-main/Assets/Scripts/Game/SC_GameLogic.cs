@@ -15,6 +15,7 @@ public class SC_GameLogic : MonoBehaviour
     #region globalVars
     private Dictionary<string, GameObject> unityShipObjects;
     private Dictionary<string, GameObject> unityGameObjects;
+    // 
     private Dictionary<int, GameObject> player1SlotsDict;
     private Dictionary<int, GameObject> unitySlotObjects;
     private Dictionary<int, GameObject> unityEnemySlotObjects;
@@ -64,8 +65,11 @@ public class SC_GameLogic : MonoBehaviour
         Listener.OnGameStarted -= OnGameStarted;
         Listener.OnMoveCompleted -= OnMoveCompleted;
     }
+
+    // OnClick function is whenever the player presses on the boxes of the enemy's board
     private void OnClick(int _slotIndex)
     {
+        // single player game
         if (isReady && !isMultiplayer)
         {
             playerMove(_slotIndex);
@@ -73,6 +77,7 @@ public class SC_GameLogic : MonoBehaviour
             changeTurn();
             StartCoroutine(WaitingTime());
         }
+        // multiplayer game
         else if (isMultiplayer && isGameReady && nextTurn == SC_GlobalVars.userId)
         {
             nextTurn = null;
@@ -86,6 +91,8 @@ public class SC_GameLogic : MonoBehaviour
     }
     #endregion
     #region Callbacks
+
+    // OnGameStarted function is when multiplayer game starts!
     private void OnGameStarted(string _Sender, string _RoomId, string _NextTurn)
     {
         isMultiplayer = true;
@@ -219,6 +226,7 @@ public class SC_GameLogic : MonoBehaviour
 
         isPlayerTurn = !isPlayerTurn;
     }
+    // First functionality once the game starts
     private void Init()
     {
         if(!isMultiplayer)
@@ -254,6 +262,7 @@ public class SC_GameLogic : MonoBehaviour
         }
         
     }
+    // once the player clicks one of the slots of the enemy it will generate the corresponding action
     private void playerMove(int _slotIdx)
     {
         unityEnemySlotObjects[_slotIdx].AddComponent<SpriteRenderer>();
@@ -278,45 +287,45 @@ public class SC_GameLogic : MonoBehaviour
                 unityEnemySlotObjects[_slotIdx].GetComponent<Animator>().runtimeAnimatorController = hitAnimator;
             }
     }
+    //  Btn_Start_Game() starts when multiplayer starts
     public void Btn_Start_Game()
-        {
-            if(isMultiplayer && nextTurn == SC_GlobalVars.userId || !isMultiplayer)
+    {
+        if ((isMultiplayer && nextTurn == SC_GlobalVars.userId) || !isMultiplayer)
         {
             setPlayer1Slots();
             Debug.Log("amount of player1 slots are " + player1SlotsDict.Count);
+
             if (player1SlotsDict.Count == allshipsize)
             {
                 isReady = true;
-            }
-            if (isReady && isMultiplayer == false)
-            {
-                generateEnemy();
-                Debug.Log("enemy were generated!");
-            }
-            else if (isReady && isMultiplayer && SC_GlobalVars.userId == nextTurn)
-            {
-                string _Indexes = "";
-                for (int index = 0; index < player1SlotsDict.Count; index++)
+
+                if (!isMultiplayer)
                 {
-                    var item = player1SlotsDict.ElementAt(index);
-                    var itemKey = item.Key;
-                    _Indexes += itemKey;
-                    if (index != player1SlotsDict.Count - 1)
-                        _Indexes += ",";
+                    generateEnemy();
+                    Debug.Log("enemy were generated!");
                 }
-                Debug.Log("turn of " + nextTurn);
-                WarpClient.GetInstance().sendMove(_Indexes);
+                else if (SC_GlobalVars.userId == nextTurn)
+                {
+                    string _Indexes = string.Join(",", player1SlotsDict.Keys);
+                    Debug.Log("turn of " + nextTurn);
+                    WarpClient.GetInstance().sendMove(_Indexes);
+                }
             }
-            if (isMultiplayer)
-            {
-                nextTurn = null;
-                changeTurn();
-                unityGameObjects["Txt_Timer"].GetComponent<SC_Timer>().resetTimer();
-            }
-            unityGameObjects["Sprite_BtnReady"].SetActive(false);
         }
+
+        if (isMultiplayer)
+        {
+            nextTurn = null;
+            changeTurn();
+            unityGameObjects["Txt_Timer"].GetComponent<SC_Timer>().resetTimer();
+        }
+
+        unityGameObjects["Sprite_BtnReady"].SetActive(false);
     }
-        private void setPlayer1Slots()
+
+    // setPlayer1Slots() function will run once the player has put all of his ships on his board
+    // setPlayer1Slots() function locates its slots and assigns it to be not empty and player's slot
+    private void setPlayer1Slots()
         {
             player1Slots = new List<GameObject>();
             foreach (GameObject a in _objs_Ships)
@@ -331,6 +340,7 @@ public class SC_GameLogic : MonoBehaviour
                 }
             }
         }
+    // generateEnemy() function occurs once "Im ready" button is clicked so it can generate the indexes of the enemy on his board
         private void generateEnemy()
         {
             int board_size = unityGameObjects["board"].GetComponent<SC_Board>().getBoardSize();
@@ -342,41 +352,61 @@ public class SC_GameLogic : MonoBehaviour
             }
 
         }
-        private void enemyMove(int indexHit = -1)
-        {
-            int size = unityGameObjects["board"].GetComponent<SC_Board>().getBoardSize();
-            if(indexHit == -1)
-                indexHit = (int)UnityEngine.Random.Range(1, size);
-            if (unitySlotObjects[indexHit].GetComponent<SC_Slot>().clicked == false)
-            {
-                unitySlotObjects[indexHit].AddComponent<SpriteRenderer>();
-                unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sortingOrder = 3;
-                unitySlotObjects[indexHit].AddComponent<Animator>();
-                if (player1SlotsDict.ContainsKey(indexHit)) // player hit the enemy!
-                {
-                    unitySlotObjects[indexHit].AddComponent<AudioSource>();
-                    unitySlotObjects[indexHit].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
-                    unitySlotObjects[indexHit].GetComponent<AudioSource>().Play();
-                    unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_Explosion/Sprite_Explosion");
-                    unitySlotObjects[indexHit].GetComponent<Animator>().runtimeAnimatorController = GetAnimator("Sprite_Explosion/Explosion_29");
-                    counter_hit_player++;
-                    Debug.Log("counter_hit_player = " + counter_hit_player);
-                    
-                }
-                else // Player missed
-                {
-                    Debug.Log(GetSprite("Sprite_Explosion/Sprite_waterSplash"));
-                    unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_Explosion/Sprite_waterSplash");
-                    unitySlotObjects[indexHit].GetComponent<Animator>().runtimeAnimatorController = GetAnimator("Sprite_Explosion/Sprite_waterSplash_1");
-                }
-                unitySlotObjects[indexHit].GetComponent<SC_Slot>().isEmpty = false;
-                unitySlotObjects[indexHit].GetComponent<SC_Slot>().clicked = true;
-            }
-            else // doing a mistake by hitting the same place
-            {
+    // enemyMove() function generates randomly a shot to any index in the player's board
+    private void enemyMove(int indexHit = -1)
+    {
+        // Get the size of the player's board
+        int size = unityGameObjects["board"].GetComponent<SC_Board>().getBoardSize();
 
-            }
+        // If indexHit is not provided, choose a random index
+        if (indexHit == -1)
+        {
+            indexHit = (int)UnityEngine.Random.Range(1, size);
         }
+
+        // If the slot is not clicked (not already hit)
+        if (!unitySlotObjects[indexHit].GetComponent<SC_Slot>().clicked)
+        {
+            // Add necessary components to the slot
+            unitySlotObjects[indexHit].AddComponent<SpriteRenderer>();
+            unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sortingOrder = 3;
+            unitySlotObjects[indexHit].AddComponent<Animator>();
+
+            // If the player's ship is hit
+            if (player1SlotsDict.ContainsKey(indexHit))
+            {
+                // Add audio component, set audio clip, and play explosion sound
+                unitySlotObjects[indexHit].AddComponent<AudioSource>();
+                unitySlotObjects[indexHit].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
+                unitySlotObjects[indexHit].GetComponent<AudioSource>().Play();
+
+                // Set explosion sprite and animation controller
+                unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_Explosion/Sprite_Explosion");
+                unitySlotObjects[indexHit].GetComponent<Animator>().runtimeAnimatorController = GetAnimator("Sprite_Explosion/Explosion_29");
+
+                // Increment hit counter and log the result
+                counter_hit_player++;
+                Debug.Log("counter_hit_player = " + counter_hit_player);
+            }
+            else
+            {
+                // Log water splash sprite and set water splash sprite and animation
+                Debug.Log(GetSprite("Sprite_Explosion/Sprite_waterSplash"));
+                unitySlotObjects[indexHit].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_Explosion/Sprite_waterSplash");
+                unitySlotObjects[indexHit].GetComponent<Animator>().runtimeAnimatorController = GetAnimator("Sprite_Explosion/Sprite_waterSplash_1");
+            }
+
+            // Update slot properties
+            unitySlotObjects[indexHit].GetComponent<SC_Slot>().isEmpty = false;
+            unitySlotObjects[indexHit].GetComponent<SC_Slot>().clicked = true;
+        }
+        else
+        {
+            // Handle the case when the same place is hit again (currently empty)
+            // You can add specific handling for this scenario if needed
+        }
+    }
+
     private Sprite GetSprite(string _SpriteName)
     {
         return SC_GameModel.Instance.GetSprite(_SpriteName);
@@ -402,6 +432,9 @@ public class SC_GameLogic : MonoBehaviour
     }
     void Update()
         {
+        /*
+         checking if arrows right or left clicked in order to rotate the ships 90 degrees
+         */
             if (Input.GetKeyUp(KeyCode.RightArrow))
             {
                 Debug.Log("right");
