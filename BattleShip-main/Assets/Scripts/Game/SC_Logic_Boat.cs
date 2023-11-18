@@ -44,6 +44,7 @@ public class SC_Logic_Boat : MonoBehaviour
             transform.position = new Vector2(mousePosition.x - startPosX, mousePosition.y - startPosY);
         }
     }
+    // this function triggers whenever we drag the ships on any slot so we can input the corresponding indexes where our player is mouseovering
     private void OnTriggerEnter2D(Collider2D col)
     {
         // Add the GameObject collided with to the list.

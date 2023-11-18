@@ -136,6 +136,7 @@ public class SC_GameLogic : MonoBehaviour
         checkState();
     }
 
+    // multiplayer
     private void setEnemySlots(string _Move)
     {
         string[] tokens = _Move.Split(',');
@@ -161,10 +162,12 @@ public class SC_GameLogic : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    // after every move , we check the state of the board - who won and who lost?
     private void checkState()
     {
         Debug.Log("counter_hit_enemy = " + counter_hit_enemy + " and slots of enemy is " + allshipsize);
         Debug.Log("counter_hit_player = " + counter_hit_player + " and slots of enemy is " + allshipsize);
+        // checking if all ships were destroyed
         if (counter_hit_enemy == allshipsize)
         {
             Sprite winner = SC_GameModel.Instance.GetSprite("Sprite_winner");
@@ -194,6 +197,7 @@ public class SC_GameLogic : MonoBehaviour
             unityGameObjects["Btn_restart"].AddComponent<BoxCollider2D>().size = new Vector2(4f, 4f);
         }
     }
+    // changing the sprite of the turn state to the corresponding current player
     private void changeTurn()
     {
         if(isMultiplayer)
@@ -213,11 +217,13 @@ public class SC_GameLogic : MonoBehaviour
                 unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.position = new Vector3(7.23f, 7.62f, 1.0f);
             }
         }
+        // if its single player change to player's turn
         else if (isPlayerTurn == false && isMultiplayer == false)
         {
             unityGameObjects["Sprite_turn"].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_me");
             unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.localScale = new Vector3(1f, 1f, 0f);
         }
+        // else change to computer's turn
         else
         {
             unityGameObjects["Sprite_turn"].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_enemy");

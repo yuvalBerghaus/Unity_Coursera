@@ -66,17 +66,6 @@ public class SC_GameModel : MonoBehaviour
             AudioClip _audio = Resources.Load<AudioClip>("Sound_FX/" + key);
             unitySFX.Add(key, _audio);
         }
-        /*        unitySprites = new Dictionary<string, Sprite>();
-                List<string> _spritesToLoad = new List<string>();
-                _spritesToLoad.Add("Sprite_boat_2px");
-                _spritesToLoad.Add("Sprite_boat_3px");
-                _spritesToLoad.Add("Sprite_boat_4px");
-                foreach (string spriteName in _spritesToLoad)
-                {
-                    Texture2D _texture2d = Resources.Load("Sprites/" + spriteName) as Texture2D;
-                    Sprite _newSprite = Sprite.Create(_texture2d, new Rect(0, 0, _texture2d.width, _texture2d.height), Vector2.zero);
-                    unitySprites.Add(spriteName, _newSprite);
-                }*/
     }
     public Sprite GetSprite(string _SpriteName)
     {
