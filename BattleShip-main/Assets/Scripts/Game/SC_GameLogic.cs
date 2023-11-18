@@ -204,6 +204,11 @@ public class SC_GameLogic : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Scene_Menu");
+    }
+
     // after every move , we check the state of the board - who won and who lost?
     private void checkState()
     {
@@ -236,8 +241,19 @@ public class SC_GameLogic : MonoBehaviour
             unityGameObjects["Btn_restart"].AddComponent<SpriteRenderer>();
             unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sprite = Btn_restart;
             unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sortingOrder = 4;
-            unityGameObjects["Btn_restart"].GetComponent<Transform>().position = new Vector3(-30f, -18f, 0f);
+            unityGameObjects["Btn_restart"].GetComponent<Transform>().position = Vector3.zero + new Vector3(4f, -4f, 0f);
             unityGameObjects["Btn_restart"].GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0f);
+            unityGameObjects["Btn_restart"].AddComponent<BoxCollider2D>().size = new Vector2(1f, 1f);
+
+
+            Sprite Btn_menu = SC_GameModel.Instance.GetSprite("Sprite_btn_menu");
+            unityGameObjects["Btn_menu"].AddComponent<SpriteRenderer>();
+            unityGameObjects["Btn_menu"].GetComponent<SpriteRenderer>().sprite = Btn_menu;
+            unityGameObjects["Btn_menu"].GetComponent<SpriteRenderer>().sortingOrder = 4;
+            unityGameObjects["Btn_menu"].GetComponent<Transform>().position = Vector3.zero + new Vector3(-4f, -4f, 0f);
+            unityGameObjects["Btn_menu"].GetComponent<Transform>().localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            unityGameObjects["Btn_menu"].AddComponent<BoxCollider2D>().size = new Vector2(1f, 1f);
+
         }
     }
     // changing the sprite of the turn state to the corresponding current player

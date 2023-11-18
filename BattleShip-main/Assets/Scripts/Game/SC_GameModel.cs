@@ -45,6 +45,7 @@ public class SC_GameModel : MonoBehaviour
         _spriteGeneral.Add("Sprite_me");
         _spriteGeneral.Add("Sprite_enemy");
         _spriteGeneral.Add("Sprite_reset");
+        _spriteGeneral.Add("Sprite_btn_menu");
         _spriteExplosionToLoad.Add("Sprite_Explosion/Sprite_waterSplash");
         foreach (string key in _spriteExplosionToLoad)
         {
