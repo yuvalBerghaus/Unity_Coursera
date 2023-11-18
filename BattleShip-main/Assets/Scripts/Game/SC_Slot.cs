@@ -17,11 +17,15 @@ public class SC_Slot : MonoBehaviour
     Material SphereMaterial;
     #endregion
     #region monoBehavior
+
+
+
     void Start()
     {
         clickable = true;
         isEmpty = true;
         clicked = false;
+
     }
     void init()
     {
@@ -43,13 +47,15 @@ public class SC_Slot : MonoBehaviour
             OnClick(slotIdx);
         }
     }
+
     private void OnMouseOver()
     {
-/*        if(isPlayerSlot == false && clicked == false)
-        {
-            // Set the new material on the GameObject
-            meshRenderer.material = SphereMaterial;
-        }*/
+        /*        if (isPlayerSlot == false && clicked == false)
+                {
+                    // Set the new material on the GameObject
+                    meshRenderer.material = SphereMaterial;
+                }*/
+        Debug.Log(slotIdx);
     }
     #endregion
     #region Logic
