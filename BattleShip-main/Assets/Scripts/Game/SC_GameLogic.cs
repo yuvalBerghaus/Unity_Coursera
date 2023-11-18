@@ -16,11 +16,11 @@ public class SC_GameLogic : MonoBehaviour
     private Dictionary<string, GameObject> unityShipObjects;
     private Dictionary<string, GameObject> unityGameObjects;
     // 
-    private Dictionary<int, GameObject> player1SlotsDict;
-    private Dictionary<int, GameObject> unitySlotObjects;
+    private Dictionary<int, GameObject> player1SlotsDict; // the chosen slots of the player (the objects of the chosen indexes)
+    private Dictionary<int, GameObject> unitySlotObjects; // the slots of all the player's board
     private Dictionary<int, GameObject> unityEnemySlotObjects;
     List<GameObject> player1Slots;
-    private string currentKeyObject;
+    private string currentKeyObject; // the name of the chosen ship that is being dragged
     private bool isMultiplayer = false;
     public bool isPlayerTurn = false;
     private int allshipsize = 14;
@@ -51,6 +51,44 @@ public class SC_GameLogic : MonoBehaviour
         }
     }
     #endregion
+    // First functionality once the game starts
+    private void Init()
+    {
+        if (!isMultiplayer)
+        {
+            isPlayerTurn = true;
+        }
+        Debug.Log("Call init");
+        unityShipObjects = new Dictionary<string, GameObject>();
+        unityEnemySlotObjects = new Dictionary<int, GameObject>();
+        unitySlotObjects = new Dictionary<int, GameObject>();
+        unityGameObjects = new Dictionary<string, GameObject>();
+        player1SlotsDict = new Dictionary<int, GameObject>();
+        _objs_Enemy_Slots = GameObject.FindGameObjectsWithTag("UnitySlotComputerObject");
+        _objs_Ships = GameObject.FindGameObjectsWithTag("UnityShipObject");
+        _objs_Game = GameObject.FindGameObjectsWithTag("UnityGameObject");
+        _objs_Slots = GameObject.FindGameObjectsWithTag("UnitySlotObject");
+        Debug.Log("_objs_Game count = " + _objs_Game.Length);
+        foreach (GameObject g in _objs_Ships)
+        {
+            unityShipObjects.Add(g.name, g);
+        }
+        // TODO - add Btn_restart
+        foreach (GameObject g in _objs_Game)
+        {
+            unityGameObjects.Add(g.name, g);
+        }
+        foreach (GameObject g in _objs_Slots)
+        {
+            unitySlotObjects.Add(g.GetComponent<SC_Slot>().slotIdx, g);
+        }
+        foreach (GameObject g in _objs_Enemy_Slots)
+        {
+            unityEnemySlotObjects.Add(g.GetComponent<SC_Slot>().slotIdx, g);
+        }
+
+    }
+
     #region Events
     private void OnEnable()
     {
@@ -69,7 +107,7 @@ public class SC_GameLogic : MonoBehaviour
     // OnClick function is whenever the player presses on the boxes of the enemy's board
     private void OnClick(int _slotIndex)
     {
-        // single player game
+        // single player procedure for each attack move
         if (isReady && !isMultiplayer)
         {
             playerMove(_slotIndex);
@@ -91,6 +129,10 @@ public class SC_GameLogic : MonoBehaviour
     }
     #endregion
     #region Callbacks
+
+
+
+
 
     // OnGameStarted function is when multiplayer game starts!
     private void OnGameStarted(string _Sender, string _RoomId, string _NextTurn)
@@ -167,7 +209,7 @@ public class SC_GameLogic : MonoBehaviour
     {
         Debug.Log("counter_hit_enemy = " + counter_hit_enemy + " and slots of enemy is " + allshipsize);
         Debug.Log("counter_hit_player = " + counter_hit_player + " and slots of enemy is " + allshipsize);
-        // checking if all ships were destroyed
+        // checking if all ships of the enemies were destroyed
         if (counter_hit_enemy == allshipsize)
         {
             Sprite winner = SC_GameModel.Instance.GetSprite("Sprite_winner");
@@ -193,8 +235,9 @@ public class SC_GameLogic : MonoBehaviour
             }
             unityGameObjects["Btn_restart"].AddComponent<SpriteRenderer>();
             unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sprite = Btn_restart;
-            unityGameObjects["Btn_restart"].GetComponent<Transform>().localScale = new Vector3(0.3f, 0.3f, 0f);
-            unityGameObjects["Btn_restart"].AddComponent<BoxCollider2D>().size = new Vector2(4f, 4f);
+            unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sortingOrder = 4;
+            unityGameObjects["Btn_restart"].GetComponent<Transform>().position = new Vector3(-30f, -18f, 0f);
+            unityGameObjects["Btn_restart"].GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0f);
         }
     }
     // changing the sprite of the turn state to the corresponding current player
@@ -232,42 +275,6 @@ public class SC_GameLogic : MonoBehaviour
 
         isPlayerTurn = !isPlayerTurn;
     }
-    // First functionality once the game starts
-    private void Init()
-    {
-        if(!isMultiplayer)
-        {
-            isPlayerTurn = true;
-        }
-        Debug.Log("Call init");
-        unityShipObjects = new Dictionary<string, GameObject>();
-        unityEnemySlotObjects = new Dictionary<int, GameObject>();
-        unitySlotObjects = new Dictionary<int, GameObject>();
-        unityGameObjects = new Dictionary<string, GameObject>();
-        player1SlotsDict = new Dictionary<int, GameObject>();
-        _objs_Enemy_Slots = GameObject.FindGameObjectsWithTag("UnitySlotComputerObject");
-        _objs_Ships = GameObject.FindGameObjectsWithTag("UnityShipObject");
-        _objs_Game = GameObject.FindGameObjectsWithTag("UnityGameObject");
-        _objs_Slots = GameObject.FindGameObjectsWithTag("UnitySlotObject");
-        Debug.Log("_objs_Game count = " + _objs_Game.Length);
-        foreach (GameObject g in _objs_Ships)
-        {
-            unityShipObjects.Add(g.name, g);
-        }
-        foreach (GameObject g in _objs_Game)
-        {
-            unityGameObjects.Add(g.name, g);
-        }
-        foreach (GameObject g in _objs_Slots)
-        {
-            unitySlotObjects.Add(g.GetComponent<SC_Slot>().slotIdx, g);
-        }
-        foreach (GameObject g in _objs_Enemy_Slots)
-        {
-            unityEnemySlotObjects.Add(g.GetComponent<SC_Slot>().slotIdx, g);
-        }
-        
-    }
     // once the player clicks one of the slots of the enemy it will generate the corresponding action
     private void playerMove(int _slotIdx)
     {
@@ -285,7 +292,8 @@ public class SC_GameLogic : MonoBehaviour
                 unityEnemySlotObjects[_slotIdx].GetComponent<Animator>().runtimeAnimatorController = hitAnimator;
                 counter_hit_enemy++;
             }
-            else if ((unityEnemySlotObjects[_slotIdx].GetComponent<SC_Slot>()).isEmpty) // player missed
+        // if player missed
+        else if ((unityEnemySlotObjects[_slotIdx].GetComponent<SC_Slot>()).isEmpty)
             {
                 RuntimeAnimatorController hitAnimator = SC_GameModel.Instance.GetAnimator("Sprite_Explosion/Sprite_waterSplash_1");
                 Sprite hitSprite = SC_GameModel.Instance.GetSprite("Sprite_Explosion/Sprite_waterSplash");
@@ -336,7 +344,8 @@ public class SC_GameLogic : MonoBehaviour
             player1Slots = new List<GameObject>();
             foreach (GameObject a in _objs_Ships)
             {
-                List<GameObject> s = a.GetComponent<SC_Logic_Boat>().getPlayer1Slots();
+                List<GameObject> s = a.GetComponent<SC_Logic_Boat>().getPlayer1Slots(); // Get the current slots which the player's ships are collided with
+            // operation to allocate the chosen slots(indexes) where the player has allocated his ships on the board
                 foreach (GameObject b in s)
                 {
                     player1SlotsDict[b.GetComponent<SC_Slot>().slotIdx] = b;

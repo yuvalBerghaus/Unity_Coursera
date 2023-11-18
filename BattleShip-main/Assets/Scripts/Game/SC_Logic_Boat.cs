@@ -30,9 +30,11 @@ public class SC_Logic_Boat : MonoBehaviour
     }
     #endregion
     #region Events
+
+    // once the chosen boat is decided for placement and press the mouse
     private void OnMouseDown()
     {
-        SC_GameLogic.Instance.setKey(gameObject.name);
+        SC_GameLogic.Instance.setKey(gameObject.name); // the chosen player's boat name will be the key
         startPosX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
         startPosY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
     }
@@ -44,7 +46,7 @@ public class SC_Logic_Boat : MonoBehaviour
             transform.position = new Vector2(mousePosition.x - startPosX, mousePosition.y - startPosY);
         }
     }
-    // this function triggers whenever we drag the ships on any slot so we can input the corresponding indexes where our player is mouseovering
+    // this function triggers whenever we drag the ships over any slots it will input its index to currentCollisions array
     private void OnTriggerEnter2D(Collider2D col)
     {
         // Add the GameObject collided with to the list.
@@ -55,7 +57,7 @@ public class SC_Logic_Boat : MonoBehaviour
     private void OnTriggerExit2D(Collider2D col)
     {
 
-        // Remove the GameObject collided with from the list.
+        // remove the slot that was collided with our ship so we can keep that current state of currentCollisions
         currentCollisions.Remove(col.gameObject);
     }
     #endregion
