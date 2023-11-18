@@ -14,7 +14,7 @@ public class SC_Logic_Boat : MonoBehaviour
     private List<GameObject> currentCollisions = new List<GameObject>();
     private Collider2D[] results;
     public float scaleFactor = 2.0f;
-
+    private Dictionary<string, GameObject> currentHighLights;
     private SpriteRenderer slotRenderer;
     private Color originalColor;
     public Color highlightColor = Color.green; // Change this to the color you want for highlighting
@@ -24,10 +24,10 @@ public class SC_Logic_Boat : MonoBehaviour
     #region monoBehavior
     void Start()
     {
+        currentHighLights = new Dictionary<string, GameObject>();
     }
     void Init()
     {
-
     }
 
     void Update()
@@ -62,12 +62,16 @@ public class SC_Logic_Boat : MonoBehaviour
         {
             Debug.Log("the name is " + col.gameObject.name);
             // Highlight the slot by changing its material
-            HighlightSlot(col.gameObject);
+            GameObject currentHighlight = HighlightSlot(col.gameObject);
+            if(currentHighlight != null)
+            {
+                currentHighLights.Add(col.gameObject.name, currentHighlight);
+            }
         }
 
 
     }
-    private void HighlightSlot(GameObject slotObject)
+    private GameObject HighlightSlot(GameObject slotObject)
     {
         // Create a new GameObject for highlighting
         GameObject highlightObject = new GameObject("Highlight");
@@ -87,16 +91,21 @@ public class SC_Logic_Boat : MonoBehaviour
         );
 
         // Optionally, adjust the sorting order if needed
-        highlightRenderer.sortingOrder = 3;
+        highlightRenderer.sortingOrder = 1;
 
         // Set the color with transparency
         highlightRenderer.color = new Color(1f, 1f, 1f, 0.5f); // Adjust the alpha channel for transparency (0.0f to 1.0f)
+        return highlightObject;
     }
     private void OnTriggerExit2D(Collider2D col)
     {
-
         // remove the slot that was collided with our ship so we can keep that current state of currentCollisions
         currentCollisions.Remove(col.gameObject);
+        if(currentHighLights.ContainsKey(col.gameObject.name))
+        {
+            Destroy(currentHighLights[col.gameObject.name]);
+            currentHighLights.Remove(col.gameObject.name);
+        }
     }
     #endregion
     #region Logic

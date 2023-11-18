@@ -434,11 +434,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066452651320545636, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: m_SortingOrder
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3066452652845679304, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: m_SortingOrder
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3066452652845679305, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: highlightMaterial
@@ -446,15 +446,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520818413376859129, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: m_SortingOrder
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5822377098997101649, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: m_SortingOrder
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5822377099610890170, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
       propertyPath: m_SortingOrder
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ac9fbefc0342a04d95a3ffd2c0a54b7, type: 3}
