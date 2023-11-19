@@ -471,6 +471,13 @@ public class SC_GameLogic : MonoBehaviour
         unityGameObjects["Btn_menu"].GetComponent<Transform>().position = Vector3.zero + new Vector3(-4f, -7f, 0f);
         unityGameObjects["Btn_menu"].GetComponent<Transform>().localScale = new Vector3(1.5f, 1.5f, 1.5f);
         unityGameObjects["Btn_menu"].AddComponent<BoxCollider2D>().size = new Vector2(1f, 1f);
+
+
+        unityGameObjects["music_state"].GetComponent<AudioSource>().clip = GetSFX("GameTheme");
+        unityGameObjects["music_state"].GetComponent<AudioSource>().volume = 0.1f;
+        unityGameObjects["music_state"].GetComponent<AudioSource>().Play();
+        gameState = true;
+
     }
     void Update()
         {

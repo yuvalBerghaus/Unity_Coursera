@@ -39,6 +39,7 @@ public class SC_GameModel : MonoBehaviour
         _AudioSource.Add("Sound_Explosion");
         _AudioSource.Add("LoseTheme");
         _AudioSource.Add("WinTheme");
+        _AudioSource.Add("GameTheme");
         _animatorExplosionToLoad.Add("Sprite_Explosion/Sprite_waterSplash_1");
         _animatorExplosionToLoad.Add("Sprite_Explosion/Explosion_29");
         _spriteExplosionToLoad.Add("Sprite_Explosion/Sprite_Explosion");
