@@ -289,7 +289,7 @@ public class SC_GameLogic : MonoBehaviour
             {
                 unityEnemySlotObjects[_slotIdx].AddComponent<AudioSource>();
                 unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
-            unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().volume = 0.4f;
+            unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().volume = 0.1f;
                 unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().Play();
                 RuntimeAnimatorController hitAnimator = SC_GameModel.Instance.GetAnimator("Sprite_Explosion/Explosion_29");
                 Sprite hitSprite = SC_GameModel.Instance.GetSprite("Sprite_Explosion/Sprite_Explosion");
@@ -399,7 +399,7 @@ public class SC_GameLogic : MonoBehaviour
                 // Add audio component, set audio clip, and play explosion sound
                 unitySlotObjects[indexHit].AddComponent<AudioSource>();
                 unitySlotObjects[indexHit].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
-                unitySlotObjects[indexHit].GetComponent<AudioSource>().volume = 0.3f;
+                unitySlotObjects[indexHit].GetComponent<AudioSource>().volume = 0.1f;
                 unitySlotObjects[indexHit].GetComponent<AudioSource>().Play();
 
                 // Set explosion sprite and animation controller
@@ -458,6 +458,11 @@ public class SC_GameLogic : MonoBehaviour
         }
         if(unityGameObjects.ContainsKey("SinglePlayer"))
         {
+            unityGameObjects["music_state"].GetComponent<AudioSource>().clip = GetSFX("GameTheme");
+            unityGameObjects["music_state"].GetComponent<AudioSource>().volume = 0.1f;
+            unityGameObjects["music_state"].GetComponent<AudioSource>().Play();
+
+
             unityGameObjects["Btn_restart"].AddComponent<SpriteRenderer>();
             unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sprite = Btn_restart;
             unityGameObjects["Btn_restart"].GetComponent<SpriteRenderer>().sortingOrder = 4;
