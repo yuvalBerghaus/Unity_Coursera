@@ -45,7 +45,7 @@ Link to the game - https://ymbproduction.itch.io/battleship2d
 <br>
 Once u click single player mode.
 
-u drag the ships to the left board and can click left or right arrow on the keyboard in order to rotate the ships while dragging it with your mouth.
+u drag the ships to the left board and can click left or right arrow on the keyboard in order to rotate the ships while dragging it with your mouse.
 
 player must allocate all ships on the left board before he can press ready - otherwise it wont start.
 
