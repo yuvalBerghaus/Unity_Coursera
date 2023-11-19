@@ -43,6 +43,13 @@ Link to the game - https://ymbproduction.itch.io/3d-platformer
 <br>
 Link to the game - https://ymbproduction.itch.io/battleship2d
 <br>
+Once u click single player mode.
+
+u drag the ships to the left board and can click left or right arrow on the keyboard in order to rotate the ships while dragging it with your mouth.
+
+player must allocate all ships on the left board before he can press ready - otherwise it wont start.
+
+Once u pressed ready u can now shoot at your enemy by pressing any box on the right grid 
 <br>
 
 ![MainMenu](https://github.com/yuvalBerghaus/Unity_Coursera/assets/65304080/04910ae9-08fd-4abb-aeb9-e7ae1b45fee1)
