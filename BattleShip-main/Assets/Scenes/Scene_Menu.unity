@@ -11886,7 +11886,7 @@ GameObject:
   - component: {fileID: 970448411}
   m_Layer: 0
   m_Name: SC_GameLogic
-  m_TagString: Untagged
+  m_TagString: UnityObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
