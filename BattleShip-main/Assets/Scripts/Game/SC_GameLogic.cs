@@ -219,12 +219,18 @@ public class SC_GameLogic : MonoBehaviour
         {
             Sprite winner = SC_GameModel.Instance.GetSprite("Sprite_winner");
             unityGameObjects["Sprite_state"].GetComponent<SpriteRenderer>().sprite = winner;
+            unityGameObjects["music_state"].GetComponent<AudioSource>().clip = GetSFX("WinTheme");
+            unityGameObjects["music_state"].GetComponent<AudioSource>().volume = 0.4f;
+            unityGameObjects["music_state"].GetComponent<AudioSource>().Play();
             gameState = true;
         }
         if (counter_hit_player == allshipsize)
         {
             Sprite loser = SC_GameModel.Instance.GetSprite("Sprite_loser");
             unityGameObjects["Sprite_state"].GetComponent<SpriteRenderer>().sprite = loser;
+            unityGameObjects["music_state"].GetComponent<AudioSource>().clip = GetSFX("LoseTheme");
+            unityGameObjects["music_state"].GetComponent<AudioSource>().volume = 0.4f;
+            unityGameObjects["music_state"].GetComponent<AudioSource>().Play();
             gameState = true;
         }
         if (gameState)
@@ -413,6 +419,7 @@ public class SC_GameLogic : MonoBehaviour
                 // Add audio component, set audio clip, and play explosion sound
                 unitySlotObjects[indexHit].AddComponent<AudioSource>();
                 unitySlotObjects[indexHit].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
+                unitySlotObjects[indexHit].GetComponent<AudioSource>().volume = 0.3f;
                 unitySlotObjects[indexHit].GetComponent<AudioSource>().Play();
 
                 // Set explosion sprite and animation controller
