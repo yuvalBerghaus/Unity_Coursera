@@ -456,6 +456,7 @@ public class SC_GameLogic : MonoBehaviour
         {
             Debug.Log("check");
         }
+
         if(unityGameObjects.ContainsKey("SinglePlayer"))
         {
             unityGameObjects["Btn_restart"].AddComponent<SpriteRenderer>();
@@ -474,6 +475,7 @@ public class SC_GameLogic : MonoBehaviour
             unityGameObjects["Btn_menu"].GetComponent<Transform>().localScale = new Vector3(1.5f, 1.5f, 1.5f);
             unityGameObjects["Btn_menu"].AddComponent<BoxCollider2D>().size = new Vector2(1f, 1f);
         }
+
     }
     void Update()
         {
