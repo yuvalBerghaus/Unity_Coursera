@@ -426,6 +426,7 @@ public class SC_GameLogic : MonoBehaviour
         {
             // Handle the case when the same place is hit again (currently empty)
             // You can add specific handling for this scenario if needed
+            enemyMove(-1);
         }
     }
 
