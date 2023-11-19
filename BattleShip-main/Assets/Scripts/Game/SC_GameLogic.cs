@@ -281,12 +281,14 @@ public class SC_GameLogic : MonoBehaviour
         {
             unityGameObjects["Sprite_turn"].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_me");
             unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.localScale = new Vector3(1f, 1f, 0f);
+            unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.position = new Vector3(-6.5f, 7.5f, 1.0f);
         }
         // else change to computer's turn
         else
         {
             unityGameObjects["Sprite_turn"].GetComponent<SpriteRenderer>().sprite = GetSprite("Sprite_enemy");
             unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            unityGameObjects["Sprite_turn"].GetComponent<Transform>().transform.position = new Vector3(5f, 7.5f, 1.0f);
         }
 
         isPlayerTurn = !isPlayerTurn;
@@ -301,11 +303,13 @@ public class SC_GameLogic : MonoBehaviour
             {
                 unityEnemySlotObjects[_slotIdx].AddComponent<AudioSource>();
                 unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().clip = GetSFX("Sound_Explosion");
+            unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().volume = 0.4f;
                 unityEnemySlotObjects[_slotIdx].GetComponent<AudioSource>().Play();
                 RuntimeAnimatorController hitAnimator = SC_GameModel.Instance.GetAnimator("Sprite_Explosion/Explosion_29");
                 Sprite hitSprite = SC_GameModel.Instance.GetSprite("Sprite_Explosion/Sprite_Explosion");
                 unityEnemySlotObjects[_slotIdx].GetComponent<SpriteRenderer>().sprite = hitSprite;
                 unityEnemySlotObjects[_slotIdx].GetComponent<Animator>().runtimeAnimatorController = hitAnimator;
+                
                 counter_hit_enemy++;
             }
         // if player missed
