@@ -176,6 +176,7 @@ public class SC_MenuLogic : MonoBehaviour
     #endregion
     #region Controller
     #region Buttons
+    //TODO
     public void Btn_Menu_SinglePlayer()
     {
         ChangeToScreen(SC_Enums.Screens.SinglePlayer, true);
@@ -280,6 +281,7 @@ public class SC_MenuLogic : MonoBehaviour
         {
             /*            unityObjects["SinglePlayer"].SetActive(true);
                         unityObjects["Menu"].SetActive(false);*/
+            
             SceneManager.LoadScene(1);
         }
 /*        else if (SC_Enums.Screens.MultiPlayer == _ToScreen)
